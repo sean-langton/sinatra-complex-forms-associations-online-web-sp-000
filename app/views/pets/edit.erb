@@ -1,11 +1,12 @@
 <h1>Create a new Pet</h1>
 
 <form action="/pets/<%=@pet.id%>" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="patch">
   <label>Name:</label>
 
   <br>
 
-  <input type="text" name="pet_name">
+  <input type="text" name="pet_name" value="<%=@pet.name%>">
 
   <br>
 
