@@ -17,7 +17,8 @@ class PetsController < ApplicationController
       @owner = Owner.create(name: params[:owner_name])
       @owner.pets << @pet
     else
-      @owner = Owner.find(params[:owner])
+      @owner = Owner.find(params[:owner][:id])
+      @owner.pets << @pet
     end
 
     redirect to "pets/#{@pet.id}"
