@@ -15,6 +15,7 @@ class PetsController < ApplicationController
     if !params[:owner_name].empty?
       @owner = Owner.create(name: params[:owner_name])
     else
+      puts params[:owner][:id]
       @owner = Owner.find(params[:owner][:id])
     end
       @owner.pets << @pet
